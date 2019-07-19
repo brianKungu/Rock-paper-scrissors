@@ -33,23 +33,31 @@ function win(userChoice, computerChoice){
   compScoreSpan.innerHTML=compScore;
   userScoreSpan.innerHTML=userScore;
   result_p.innerHTML= convert(userChoice)+" " + "wins to " + " " + convert(computerChoice) +" !"+ "YOU WIN!";
+  document.getElementById(userChoice).classList.add('green-glow');
+  setTimeout(()=> document.getElementById(userChoice).classList.remove('green-glow') ,350);
 }
 
 function lose(userChoice,computerChoice){
-  userScore++;
-  console.log("win");
+  compScore++;
+  
   compScoreSpan.innerHTML=compScore;
   userScoreSpan.innerHTML=userScore;
-  result_p.innerHTML= convert(userChoice)+" " + "wins to " + " " + convert(computerChoice) +" !"+ "YOU WIN!";
+  result_p.innerHTML= convert(userChoice)+" " + "loses to " + " " + convert(computerChoice) +" !"+ "YOU LOSE!";
+  document.getElementById(userChoice).classList.add('red-glow');
+  setTimeout(()=> document.getElementById(userChoice).classList.remove('red-glow') ,350);
   
-  console.log("lose");
 
 }
 
 function draw(userChoice,computerChoice){
+  
+  compScoreSpan.innerHTML=compScore;
+  userScoreSpan.innerHTML=userScore;
+  result_p.innerHTML= convert(userChoice)+" " + convert(computerChoice) +" !"+ "Its a draw!";
+  document.getElementById(userChoice).classList.add('gray-glow');
+  setTimeout(function() {document.getElementById(userChoice).classList.remove('gray-glow')} ,350);
 
-
-  console.log("Draw!");
+  
 }
 
 function Game(userChoice){
